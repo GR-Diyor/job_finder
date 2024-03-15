@@ -18,7 +18,6 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   custom_navigation_bar: ^0.8.2
-  ant_icons: ^1.0.0
 
 dev_dependencies:
   flutter_test:

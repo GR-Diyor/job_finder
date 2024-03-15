@@ -35,11 +35,11 @@ Widget job_search(BuildContext context,String skill,String profession,int result
             ),
             child: Text(
               profession,
-              style: TextStyle(
-                color: AppColor().cardPrimaryColor,
+              style: const TextStyle(
+                color: Colors.white,
                 fontSize: 13.0,
                 fontFamily: "Raleway-VariableFont_wght",
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w700,
               ),
             ),
           ),

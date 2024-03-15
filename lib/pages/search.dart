@@ -1,4 +1,3 @@
-import 'package:ant_icons/ant_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:job_finder/functions/search_functions.dart';
 import 'package:job_finder/resources/app_color.dart';
@@ -90,7 +89,7 @@ class _SearchState extends State<Search> {
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
-                          suffixIcon: const Icon(AntIcons.close,color: Colors.grey,size: 18,),
+                          suffixIcon: const Icon(Icons.close,color: Colors.grey,size: 18,),
                           hintText: "UX/UI Designer",
                           hintStyle: TextStyle(
                             color: AppColor().textColor,

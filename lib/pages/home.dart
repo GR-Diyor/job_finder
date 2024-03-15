@@ -24,6 +24,7 @@ class _HomeState extends State<Home> {
       backgroundColor: AppColor().backgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
+          physics: const ClampingScrollPhysics(),
           child: SizedBox(
             height: height,
             width: width,

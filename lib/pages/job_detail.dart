@@ -157,9 +157,9 @@ class _Job_detailState extends State<Job_detail> {
                         ),
                         SizedBox(
                           width: width,
-                          child: Column(
+                          child: const Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
+                            children: [
                               //gap
                               SizedBox(
                                 height: 14,
