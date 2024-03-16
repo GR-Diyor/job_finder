@@ -52,7 +52,7 @@ class _Job_detailState extends State<Job_detail> {
             children: [
               // header type
               Container(
-                height: 366,
+                height: height*0.4,
                 width: width,
                 padding: const EdgeInsets.only(left: 24,right: 24,top: 38),
                 decoration:BoxDecoration(
@@ -60,7 +60,7 @@ class _Job_detailState extends State<Job_detail> {
                   borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(32),bottomRight: Radius.circular(32)),
                 ),
                 child: Column(
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     //title and figma logo
@@ -80,7 +80,7 @@ class _Job_detailState extends State<Job_detail> {
                       ],
                     ),
                     //gap
-                    const SizedBox(height: 27,),
+                    const SizedBox(height: 10,),
                     // date
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -121,74 +121,81 @@ class _Job_detailState extends State<Job_detail> {
                       ],
                     ),
                     // card
-                    Stack(
-                      children: [
-                        Container(
-                          margin:const EdgeInsets.only(top: 36),
-                          padding: const EdgeInsets.only(top: 19,left: 24,bottom: 21),
-                          width: width,
-                          height: 138,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            color: const Color.fromRGBO(164, 220, 198, 0.14),
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text("\$32",style: TextStyle(
-                                color: AppColor().textColor,
-                                fontSize: 37,
+                    SizedBox(
+                      width: width,
+                      height: height*0.2,
+                      child: Stack(
+                        fit: StackFit.loose,
+                        children: [
+                          Container(
+                            width: width,
+                            margin:const EdgeInsets.only(top: 36),
+                            padding: const EdgeInsets.only(top: 19,left: 24,bottom: 21),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(18),
+                              color: const Color.fromRGBO(164, 220, 198, 0.14),
+                            ),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("\$32",style: TextStyle(
+                                  color: AppColor().textColor,
+                                  fontSize: 37,
+                                    fontWeight: FontWeight.w600,
+                                  fontFamily:"Raleway-SemiBold",
+                                ),),
+                                const Text("Make new offer",
+                                style: TextStyle(
+                                  fontSize: 13,
                                   fontWeight: FontWeight.w600,
-                                fontFamily:"Raleway-SemiBold",
-                              ),),
-                              const Text("Make new offer",
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w600,
-                                color: Color.fromRGBO(59, 59, 59, 62),
-                                fontFamily: "Raleway-SemiBold"
-                              ),
-                              ),
+                                  color: Color.fromRGBO(59, 59, 59, 62),
+                                  fontFamily: "Raleway-SemiBold"
+                                ),
+                                ),
 
 
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          width: width,
-                          child: const Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              //gap
-                              SizedBox(
-                                height: 14,
-                              ),
-                              Image(
-                                image: AssetImage("assets/images/OBJECTS_man.png"),
-                              ),
-                            ],
+                          SizedBox(
+                            width: width,
+                            child:  Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                //gap
+                                const SizedBox(
+                                  height: 14,
+                                ),
+                                SizedBox(
+                                  width: width*0.35,
+                                  child:const Image(
+                                    image: AssetImage("assets/images/OBJECTS_man.png"),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                    Expanded(
-                      child: Container(
-                        alignment: Alignment.bottomCenter,
-                        child: CupertinoSegmentedControl(
-                          groupValue:value,
-                          selectedColor: Colors.white,
-                          unselectedColor: Colors.white,
-                          borderColor: Colors.white,
-                          pressedColor: Colors.white,
-                          children: {
-                            0: buildSegment(text: "Job Deception",isActive:true,color: true),
-                            1: buildSegment(text: "Benifit",isActive:false,color: false),
-                            2: buildSegment(text:"Company info",isActive:false,color: false),
-                          },
-                          onValueChanged: (groupvalue) {
-                          },
-                        ),
+                    Container(
+                      height: height*0.07,
+                      width: width,
+                      alignment: Alignment.bottomCenter,
+                      child: CupertinoSegmentedControl(
+                        groupValue:value,
+                        selectedColor: Colors.white,
+                        unselectedColor: Colors.white,
+                        borderColor: Colors.white,
+                        pressedColor: Colors.white,
+                        children: {
+                          0: buildSegment(text: "Job Deception",isActive:true,color: true),
+                          1: buildSegment(text: "Benifit",isActive:false,color: false),
+                          2: buildSegment(text:"Company info",isActive:false,color: false),
+                        },
+                        onValueChanged: (groupvalue) {
+                        },
                       ),
                     ),
                   ],

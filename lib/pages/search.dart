@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_finder/functions/search_functions.dart';
+import 'package:job_finder/pages/job_detail.dart';
 import 'package:job_finder/resources/app_color.dart';
 
 class Search extends StatefulWidget {
@@ -26,9 +27,12 @@ class _SearchState extends State<Search> {
           child: Stack(
             children:  [
               //gradients
-              const Image(
-                image: AssetImage("assets/images/Rectangle.png",),
-                fit: BoxFit.contain,
+              SizedBox(
+                width: width,
+                child: const Image(
+                  image: AssetImage("assets/images/Rectangle.png",),
+                  fit: BoxFit.contain,
+                ),
               ),
               const Align(
                 alignment: Alignment.topRight,
@@ -121,7 +125,11 @@ class _SearchState extends State<Search> {
                       child: ListView(
                         scrollDirection: Axis.vertical,
                         children: [
-                          reference("assets/images/figma_logo1.png","Figma.Co","Marketing",32),
+                          GestureDetector(
+                              onTap:(){
+                                Navigator.pushNamed(context, Job_detail.id);
+                              },
+                              child: reference("assets/images/figma_logo1.png","Figma.Co","Marketing",32)),
                           reference("assets/images/spotify-logo1.png","Spotify","Technical",32),
                           reference("assets/images/sketch_logo1.png","Sketch B.V","Marketing",32),
                           reference("assets/images/Slack_Logo1.png","Slack Technologies","Sales",32),
